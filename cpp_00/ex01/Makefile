@@ -1,6 +1,6 @@
 NAME = annuaire_nul
 
-SRCS = main.cpp
+SRCS = main.cpp contact.class.cpp
 
 OBJECTS = $(SRCS:.cpp=.o)
 
