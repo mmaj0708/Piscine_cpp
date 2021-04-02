@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 11:04:22 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/02 13:16:11 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/02 16:36:40 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define HEADER_HPP
 
 #include<iostream>
+#include<iomanip>
 #include "contact.class.hpp"
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:49:56 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/02 14:56:45 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/02 17:01:00 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,63 @@ void    ft_add(int *index, contact *contact_tab)
 		std::cout << "you can't add more than 8 contacts\n" << std::endl;
 		return ;	
 	}
-
     std::cout <<         \
     "Add new contact\n" << \
     std::endl;
-	
 	contact contact_inst;
 	contact_inst.addcontact();
-	// contact_inst.printcontact();
-	contact_tab[(*index) - 1] = contact_inst;
-	std::cout << "CHECK FIRST NAME" << contact_tab[*index - 1].getFirstName() << std::endl;
 	(*index)++;
+	contact_tab[(*index) - 1] = contact_inst;
+}
+	// contact_inst.printcontact();
+
+void	ft_print_contact(int index, contact *contact_tab)
+{
+	int		i = 0;
+
+	std::cout << std::setfill (' ') << std::setw (10);
+	std::cout << "\nindex ";
+	std::cout << "|";
+	std::cout << std::setfill (' ') << std::setw (10);
+	std::cout << "first name";
+	std::cout << "|";
+	std::cout << std::setfill (' ') << std::setw (10);
+	std::cout << "last name";
+	std::cout << "|";
+	std::cout << std::setfill (' ') << std::setw (10);
+	std::cout << "nickname" << std::endl;
+
+		std::cout << std::setfill (' ') << std::setw (10);
+		std::cout << i + 1;
+		std::cout << std::setfill (' ') << std::setw (10);
+		std::cout << "LOOONG NAAAAME";
+		std::cout << std::setfill (' ') << std::setw (10);
+		std::cout << "GNE";
+		std::cout << std::setfill (' ') << std::setw (10);
+		std::cout << "BLA";
+		std::cout << std::endl;
+
+
+	// while (i < index)
+	// {
+	// 	std::cout << i + 1;
+	// 	std::cout << std::setw(10);
+	// 	std::cout << contact_tab[i].getFirstName();
+	// 	std::cout << contact_tab[i].getLastName();
+	// 	std::cout << contact_tab[i].getNickName();
+	// 	std::cout << std::endl;
+	// 	i++;
+	// }
 }
 
-void    ft_search(void)
+void    ft_search(int *index, contact *contact_tab)
 {
-    
+	// if (*index == 0) {
+	// 	std::cout << "\nplease add contact first\n" << std::endl;
+	// 	return ;
+	// }
+	ft_print_contact(*index, contact_tab);
+	std::cout << "Please choose an index\n" << std::endl;
 }
 
 void    phonebook(void)
@@ -42,7 +83,7 @@ void    phonebook(void)
     std::string command;
 	contact		contact_tab[8];
     
-	index = 1;
+	index = 0;
     std::cout << "Please enter command (ADD/SEARCH/EXIT)" << std::endl;
     while (1)
     {
@@ -50,13 +91,13 @@ void    phonebook(void)
         if (command == "ADD")
             ft_add(&index, contact_tab);
         else if (command == "SEARCH")
-            ft_search();
+            ft_search(&index, contact_tab);
         else if (command == "EXIT")
             break;
         else
             std::cout << command << " is not a command" << std::endl;
-		
-	// std::cout << index << std::endl;
+
+		// std::cout << "CHECK FIRST NAME : " << contact_tab[0].getFirstName() << std::endl;
 
         std::cout << "Please enter command (ADD/SEARCH/EXIT)" << std::endl;
     }

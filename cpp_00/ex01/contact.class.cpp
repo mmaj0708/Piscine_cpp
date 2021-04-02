@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:23:10 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/02 14:43:10 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/02 15:45:48 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,55 @@ std::string contact::getFirstName(void) const {
 	
 	return (this->fName);
 }
+
+std::string contact::getLastName(void) const {
+	
+	return (this->lName);
+}
+
+std::string contact::getNickName(void) const {
+	
+	return (this->nName);
+}
+
+std::string contact::getLogin(void) const {
+	
+	return (this->login);
+}
+
+std::string contact::getPostAddress(void) const {
+	
+	return (this->postAddress);
+}
+
+std::string contact::getEmailAddress(void) const {
+	
+	return (this->emailAddress);
+}
+
+std::string contact::getPhone(void) const {
+	
+	return (this->birthday);
+}
+
+std::string contact::getBirth(void) const {
+
+	return (this->birthday);
+}
+
+std::string contact::getMeal(void) const {
+	
+	return (this->meal);
+}
+
+std::string contact::getUnderwear(void) const {
+	
+	return (this->underwear);
+}
+
+std::string contact::getSecret(void) const {
+	
+	return (this->secret);
+}
+
+

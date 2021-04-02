@@ -6,11 +6,13 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 10:38:00 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/01 16:41:56 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/02 16:51:34 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<iostream>
+
+// use of std::uppercase ??
 
 void	print_upper(std::string str)
 {
