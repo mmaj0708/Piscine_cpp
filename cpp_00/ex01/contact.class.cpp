@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:23:10 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/02 15:45:48 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/05 17:09:04 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,6 @@ void		contact::addcontact(void) {
 	std::cin >> this->underwear;
 	std::cout << "Enter darkest secret :" << std::endl;
 	std::cin >> this->secret;
-}
-
-void		contact::printcontact(void) {
-
-	std::cout << this->fName << std::endl;
-	std::cout << this->lName << std::endl;
 }
 
 std::string contact::getFirstName(void) const {

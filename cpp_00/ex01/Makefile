@@ -6,13 +6,13 @@ OBJECTS = $(SRCS:.cpp=.o)
 
 CXX = clang++
 
-CXXFLAGS += -Wall -Wextra -std=c++98
+CPPFLAGS += -Wall -Wextra -std=c++98
 
 all : $(NAME)
 
 $(NAME) : $(OBJECTS)
 
-	@${CXX} ${CXXFLAGS} -o ${NAME} $(OBJECTS)
+	@${CXX} -o ${NAME} ${CPPFLAGS} $(OBJECTS)
 
 clean : 
 	@/bin/rm -f $(OBJECTS)

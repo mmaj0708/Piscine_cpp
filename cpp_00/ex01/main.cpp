@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:49:56 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/05 15:27:12 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/05 17:10:21 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void    ft_add(int *index, contact *contact_tab)
 	(*index)++;
 	contact_tab[(*index) - 1] = contact_inst;
 }
-	// contact_inst.printcontact();
 
 std::string	transform_string(std::string str)
 {
@@ -76,9 +75,19 @@ void	ft_print_all_contact(int index, contact *contact_tab)
 	}
 }
 
-void	ft_print_contact(int index, contact *contact_tab)
+void	ft_print_contact(int i, contact *contact_tab)
 {
-	
+	std::cout << "first name      : " << contact_tab[i - 1].getFirstName() << std::endl;
+	std::cout << "last name       : " << contact_tab[i - 1].getLastName() << std::endl;
+	std::cout << "nickname        : " << contact_tab[i - 1].getNickName() << std::endl;
+	std::cout << "login           : " << contact_tab[i - 1].getLogin() << std::endl;
+	std::cout << "postal address  : " << contact_tab[i - 1].getPostAddress() << std::endl;
+	std::cout << "email address   : " << contact_tab[i - 1].getEmailAddress() << std::endl;
+	std::cout << "phone number    : " << contact_tab[i - 1].getPhone() << std::endl;
+	std::cout << "birthday date   : " << contact_tab[i - 1].getBirth() << std::endl;
+	std::cout << "favorite meal   : " << contact_tab[i - 1].getMeal() << std::endl;
+	std::cout << "underwear color : " << contact_tab[i - 1].getUnderwear() << std::endl;
+	std::cout << "darkest secret  : " << contact_tab[i - 1].getSecret() << std::endl;
 }
 
 void    ft_search(int *index, contact *contact_tab)
@@ -90,7 +99,7 @@ void    ft_search(int *index, contact *contact_tab)
 		return ;
 	}
 	ft_print_all_contact(*index, contact_tab);
-	std::cout << "\nPlease choose an index\n" << std::endl;
+	std::cout << "\nPlease choose an index" << std::endl;
 	std::cin >> input_int;
 	if (std::cin.fail() || input_int < 1 || input_int > *index)
 	{
@@ -103,7 +112,7 @@ void    ft_search(int *index, contact *contact_tab)
 	std::cout << "index is : " << input_int << std::endl;
     std::cin.clear();
     std::cin.ignore(256,'\n');
-	ft_print_contact();
+	ft_print_contact(input_int, contact_tab);
 }
 
 void    phonebook(void)
@@ -113,7 +122,7 @@ void    phonebook(void)
 	contact		contact_tab[8];
     
 	index = 0;
-    std::cout << "Please enter command (ADD/SEARCH/EXIT)" << std::endl;
+    std::cout << "\nPlease enter command (ADD/SEARCH/EXIT)" << std::endl;
     while (1)
     {
         std::cin >> command;
@@ -125,7 +134,7 @@ void    phonebook(void)
             break;
         else
             std::cout << command << " is not a command" << std::endl;
-        std::cout << "Please enter command (ADD/SEARCH/EXIT)" << std::endl;
+        std::cout << "\nPlease enter command (ADD/SEARCH/EXIT)" << std::endl;
     }
 }
 

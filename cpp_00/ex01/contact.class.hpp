@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 10:46:12 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/02 14:18:58 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/05 17:09:09 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class	contact {
 public:
 
 	void		addcontact(void);
-	void		printcontact(void);
 
 	std::string getFirstName(void) const;
 	std::string getLastName(void) const;
