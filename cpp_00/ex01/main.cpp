@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:49:56 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/02 17:01:00 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/05 10:09:53 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,21 @@ void    ft_add(int *index, contact *contact_tab)
 }
 	// contact_inst.printcontact();
 
+std::string	transform_string(std::string str)
+{
+	if (str.length() > 10)
+	{
+		std::string::iterator it = str;
+	}
+	return ();
+}
+
 void	ft_print_contact(int index, contact *contact_tab)
 {
 	int		i = 0;
 
 	std::cout << std::setfill (' ') << std::setw (10);
-	std::cout << "\nindex ";
+	std::cout << "index";
 	std::cout << "|";
 	std::cout << std::setfill (' ') << std::setw (10);
 	std::cout << "first name";
@@ -44,15 +53,19 @@ void	ft_print_contact(int index, contact *contact_tab)
 	std::cout << std::setfill (' ') << std::setw (10);
 	std::cout << "nickname" << std::endl;
 
+	while (i < index)
+	{	
 		std::cout << std::setfill (' ') << std::setw (10);
 		std::cout << i + 1;
-		std::cout << std::setfill (' ') << std::setw (10);
-		std::cout << "LOOONG NAAAAME";
-		std::cout << std::setfill (' ') << std::setw (10);
+		std::cout << std::setfill (' ') << std::setw (11);
+		std::cout << "LOOONG";
+		std::cout << std::setfill (' ') << std::setw (11);
 		std::cout << "GNE";
-		std::cout << std::setfill (' ') << std::setw (10);
+		std::cout << std::setfill (' ') << std::setw (11);
 		std::cout << "BLA";
 		std::cout << std::endl;
+		i++;
+	}
 
 
 	// while (i < index)
