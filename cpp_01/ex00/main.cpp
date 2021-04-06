@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/02 11:04:22 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/06 12:22:14 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/06 10:47:46 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/06 11:25:52 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_HPP
-# define HEADER_HPP
+#include "pony.hpp"
 
-#include<iostream>
-#include<string>
-#include<iomanip>
-#include "contact.class.hpp"
-
-#endif
+int		main()
+{
+	ponyOnTheStack();
+	ponyOnTheHeap();
+}

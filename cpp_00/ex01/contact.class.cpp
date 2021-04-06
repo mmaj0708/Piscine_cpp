@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:23:10 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/05 17:09:04 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/06 12:29:21 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void		contact::addcontact(void) {
 
 	std::cout << "Enter first name :" << std::endl;
-	std::cin >> this->fName;
+	std::getline(std::cin, this->fName);
 	std::cout << "Enter last name :" << std::endl;
 	std::cin >> this->lName;	
 	std::cout << "Enter nickname :" << std::endl;

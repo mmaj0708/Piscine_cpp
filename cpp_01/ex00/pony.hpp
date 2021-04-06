@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.hpp                                         :+:      :+:    :+:   */
+/*   pony.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/02 11:04:22 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/06 12:22:14 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/06 10:48:52 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/06 11:24:47 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_HPP
-# define HEADER_HPP
+#ifndef PONY_HPP
+# define PONY_HPP
 
-#include<iostream>
-#include<string>
-#include<iomanip>
-#include "contact.class.hpp"
+#include <iostream>
+
+class pony
+{
+public:
+
+	std::string name;
+	std::string color;
+	int			qi;
+};
+
+void	ponyOnTheStack(void);
+void	ponyOnTheHeap(void);
 
 #endif
