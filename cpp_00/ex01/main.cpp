@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:49:56 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/05 17:10:21 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/06 15:12:05 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,8 @@ void	ft_print_contact(int i, contact *contact_tab)
 
 void    ft_search(int *index, contact *contact_tab)
 {
-	int			input_int;
+	std::string				input_int;
+	std::string::iterator	it = input_int.begin();
 
 	if (*index == 0) {
 		std::cout << "\nplease add contact first\n" << std::endl;
@@ -101,7 +102,7 @@ void    ft_search(int *index, contact *contact_tab)
 	ft_print_all_contact(*index, contact_tab);
 	std::cout << "\nPlease choose an index" << std::endl;
 	std::cin >> input_int;
-	if (std::cin.fail() || input_int < 1 || input_int > *index)
+	if (it[0] < '1' || it[0] - 48 > (*index) || input_int.length() > 1)
 	{
 		std::cout << "Error" << std::endl;
         std::cin.clear();
@@ -112,7 +113,7 @@ void    ft_search(int *index, contact *contact_tab)
 	std::cout << "index is : " << input_int << std::endl;
     std::cin.clear();
     std::cin.ignore(256,'\n');
-	ft_print_contact(input_int, contact_tab);
+	ft_print_contact((int)it[0] - 48, contact_tab);
 }
 
 void    phonebook(void)

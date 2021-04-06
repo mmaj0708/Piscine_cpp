@@ -6,36 +6,37 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:23:10 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/06 12:29:21 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/06 14:23:00 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.hpp"
 
 void		contact::addcontact(void) {
-
+    std::cin.clear();
+    std::cin.ignore(256,'\n');
 	std::cout << "Enter first name :" << std::endl;
-	std::getline(std::cin, this->fName);
+	getline(std::cin, this->fName, '\n');
 	std::cout << "Enter last name :" << std::endl;
-	std::cin >> this->lName;	
+	getline(std::cin, this->lName, '\n');
 	std::cout << "Enter nickname :" << std::endl;
-	std::cin >> this->nName;
+	getline(std::cin, this->nName, '\n');
 	std::cout << "Enter login :" << std::endl;
-	std::cin >> this->login;
+	getline(std::cin, this->login, '\n');
 	std::cout << "Enter postal address :" << std::endl;
-	std::cin >> this->postAddress;
+	getline(std::cin, this->postAddress, '\n');
 	std::cout << "Enter email address :" << std::endl;
-	std::cin >> this->emailAddress;
+	getline(std::cin, this->emailAddress, '\n');
 	std::cout << "Enter phone number :" << std::endl;
-	std::cin >> this->phone;
+	getline(std::cin, this->phone, '\n');
 	std::cout << "Enter birthday date :" << std::endl;
-	std::cin >> this->birthday;
+	getline(std::cin, this->birthday, '\n');
 	std::cout << "Enter favorite meal :" << std::endl;
-	std::cin >> this->meal;
+	getline(std::cin, this->meal, '\n');
 	std::cout << "Enter color underwear :" << std::endl;
-	std::cin >> this->underwear;
+	getline(std::cin, this->underwear, '\n');
 	std::cout << "Enter darkest secret :" << std::endl;
-	std::cin >> this->secret;
+	getline(std::cin, this->secret, '\n');
 }
 
 std::string contact::getFirstName(void) const {
