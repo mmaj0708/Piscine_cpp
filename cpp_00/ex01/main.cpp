@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:49:56 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/06 15:12:05 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/06 15:34:59 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void    ft_add(int *index, contact *contact_tab)
 		return ;	
 	}
     std::cout <<         \
-    "Add new contact\n" << \
+    "\nAdd new contact\n" << \
     std::endl;
 	contact contact_inst;
 	contact_inst.addcontact();
@@ -126,7 +126,9 @@ void    phonebook(void)
     std::cout << "\nPlease enter command (ADD/SEARCH/EXIT)" << std::endl;
     while (1)
     {
-        std::cin >> command;
+		// std::cin.clear();
+    	// std::cin.ignore(256,'\n');
+		getline(std::cin, command, '\n');
         if (command == "ADD")
             ft_add(&index, contact_tab);
         else if (command == "SEARCH")
