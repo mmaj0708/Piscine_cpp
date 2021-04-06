@@ -6,15 +6,14 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:23:10 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/06 15:35:38 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/06 15:40:44 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.hpp"
 
 void		contact::addcontact(void) {
-    // std::cin.clear();
-    // std::cin.ignore(256,'\n');
+
 	std::cout << "Enter first name :" << std::endl;
 	getline(std::cin, this->fName, '\n');
 	std::cout << "Enter last name :" << std::endl;
