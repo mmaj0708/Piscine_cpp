@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 15:47:32 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/07 16:28:26 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/07 16:19:04 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/07 16:53:19 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
-
-
-class Zombie
+int	main()
 {
-public:
+	ZombieHorde zh(5);
 
-	std::string	name;
-	std::string	type;
-	Zombie(std::string c_name, std::string c_type);
-};
-
-#endif
+	return (0);
+}

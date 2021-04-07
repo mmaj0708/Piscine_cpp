@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 15:47:32 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/07 16:28:26 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/07 14:00:51 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/07 16:28:41 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define ZOMBIE_HPP
 
 #include <iostream>
-
+#include "ZombieHorde.hpp"
 
 class Zombie
 {
@@ -22,7 +22,7 @@ public:
 
 	std::string	name;
 	std::string	type;
-	Zombie(std::string c_name, std::string c_type);
+	void		announce(void);
 };
 
 #endif
