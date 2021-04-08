@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/08 11:12:34 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/08 15:33:49 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/08 16:12:38 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/08 16:42:04 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_HPP
-# define HUMAN_HPP
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-#include "Brain.hpp"
-#include <iostream>
-
-class Brain;
-
-class Human
+int main()
 {
-private:
-
-
-public:
-
-	Brain const		brain;
-	std::string		identify(void) const;
-	const Brain		&getBrain(void);
-
-};
-
-#endif
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+}
