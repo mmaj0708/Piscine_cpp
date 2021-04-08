@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/07 16:19:04 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/08 10:46:37 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/08 11:12:34 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/08 15:27:04 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMAN_HPP
+# define HUMAN_HPP
 
-int	main()
+#include "Brain.hpp"
+#include <iostream>
+
+class Brain;
+
+class Human
 {
-	ZombieHorde zh1(5);
-	ZombieHorde zh2(4);
-	ZombieHorde zh3(10);
+private:
 
-	zh1.announce();
-	zh2.announce();
-	zh3.announce();
 
-	return (0);
-}
+public:
+
+	// Human();
+	// ~Human();
+	Brain const		brain;
+	std::string		identify(void) const;
+	const Brain		&getBrain(void);
+
+};
+
+#endif

@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/07 16:19:04 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/08 10:46:37 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/08 12:02:46 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/08 15:23:31 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Brain.hpp"
 
-int	main()
+std::string 	Brain::identify(void) const
 {
-	ZombieHorde zh1(5);
-	ZombieHorde zh2(4);
-	ZombieHorde zh3(10);
+	std::string 		brain_addr;
+	std::ostringstream	oss;
 
-	zh1.announce();
-	zh2.announce();
-	zh3.announce();
+	oss << this;
+	brain_addr = oss.str();
+	
+	return(brain_addr);
+}
 
-	return (0);
+Brain::Brain()
+{
+	this->matiereGrise = 3;
+	this->neurone = 5;
+	 return;
 }
