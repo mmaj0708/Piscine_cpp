@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:24:10 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/08 17:45:44 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/09 10:06:46 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ private:
 
 public:
 
-	std::string name;
-	Weapon		weapon;
-	void		attack(void);
-	HumanA(std::string name, Weapon weapon);
+	std::string 	name;
+	Weapon			&weapon;
+	void			attack(void);
+	HumanA(std::string name, Weapon &weapon);
 	~HumanA();
 
 };
