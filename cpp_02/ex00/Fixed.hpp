@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 15:47:32 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/12 08:52:20 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/12 10:04:28 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/12 13:33:56 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 #include <iostream>
 
-
-class Zombie
+class Fixed
 {
+private:
+
+	int					fixed_n;
+	const static int	binary_point = 8;
+
 public:
 
-	std::string	name;
-	std::string	type;
-	Zombie(std::string c_name, std::string c_type);
-	void	announce(void);
+	Fixed( void );
+	Fixed( Fixed const & src );
+	~Fixed( void );
+	Fixed & operator=( Fixed const & rhs );
+	int		getRawBits( void ) const;
+	void	setRawBits( int const raw );
 };
 
 #endif
