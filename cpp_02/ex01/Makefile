@@ -1,6 +1,6 @@
 NAME = a.out
 
-SRCS = main.cpp Fixed.cpp Fixed.hpp
+SRCS = main.cpp Fixed.cpp
 
 OBJECTS = $(SRCS:.cpp=.o)
 
