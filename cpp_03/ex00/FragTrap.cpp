@@ -51,6 +51,73 @@ FragTrap & FragTrap::operator=( FragTrap const & rhs )
     return (*this);
 }
 
+void	FragTrap::rangedAttack(std::string const & target)
+{
+	std::cout <<
+	"FR4G-TP " << 
+	this->Name << 
+	" attaque " << 
+	target << 
+	" à distance, causant " <<
+	this->Ranged_attack_damage <<
+	" points de dégâts !" <<
+	std::endl;
+}
+
+void	FragTrap::meleeAttack(std::string const & target)
+{
+	std::cout <<
+	"FR4G-TP " << 
+	this->Name << 
+	" attaque " << 
+	target << 
+	" en mêlée, causant " <<
+	this->Melee_attack_damage <<
+	" points de dégâts !" <<
+	std::endl;
+}
+
+void	FragTrap::takeDamage(unsigned int amount)
+{
+	std::cout <<
+	"FR4G-TP " << 
+	this->Name << 
+	" prend " << 
+	amount - this->Armor_damage_reduction <<
+	" de dommage !" <<
+	std::endl;
+	this->Hit_points = this->Hit_points - amount + this->Armor_damage_reduction;
+	if (this->Hit_points < 0)
+		this->Hit_points = 0;
+}
+
+void	FragTrap::beRepaired(unsigned int amount)
+{
+	std::cout <<
+	"FR4G-TP " << 
+	this->Name << 
+	" se voit réparer 20 HP et 20 point d'énergie !" << 
+	std::endl;
+	this->Hit_points = this->Hit_points + amount;
+	this->Energy_points = this->Energy_points + amount;
+	if (this->Hit_points > this->Max_hit_points)
+		this->Hit_points = Max_hit_points;
+	if (this->Energy_points > this->Max_energy_points)
+		this->Energy_points = Max_energy_points;
+}
+
+void	FragTrap::vaulthunter_dot_exe(std::string const & target)
+{
+	std::string tab[5] = {"poignardage de dos", "coup de pied dans ta tête", "gros doigt", "eye contact", "BLABLABLA JENTENDS RIEN"};
+	if (this->Energy_points - 25 < 0)
+	{
+		std::cout << this->Name << " a moins de 25 energy_points !";
+		return;
+	}
+	this->Energy_points = this->Energy_points - 25;
+	std::cout << this->Name << " utilise " << tab[std::rand() % 5] << " sur " << target;
+}
+
 std::ostream & operator<<( std::ostream & o, FragTrap const & rhs )
 {
 	o << "name :\t\t\t " << rhs.Name << std::endl;

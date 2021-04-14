@@ -14,5 +14,8 @@
 
 int main()
 {
-	
+	FragTrap Sherman("Sherman");
+	FragTrap Tom("Tom");
+
+    Sherman.rangedAttack(Tom.Name);
 }

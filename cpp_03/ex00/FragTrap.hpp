@@ -14,6 +14,7 @@
 # define FRAG_TRAP
 
 #include <iostream>
+#include <cstdlib>
 
 class FragTrap
 {
@@ -31,6 +32,7 @@ public:
 	void	meleeAttack(std::string const & target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
+	void	vaulthunter_dot_exe(std::string const & target);
 
 	std::string		Name;
 	int 			Hit_points = 100;
@@ -43,5 +45,7 @@ public:
 	int				Armor_damage_reduction = 5;
 
 };
+
+std::ostream & operator<<( std::ostream & o, FragTrap const & rhs );
 
 #endif
