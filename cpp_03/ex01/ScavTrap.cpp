@@ -1,57 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/13 14:23:15 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/15 09:41:46 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/15 09:58:56 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/15 10:29:50 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-void	FragTrap::init_vars(void)
+void	ScavTrap::init_vars(void)
 {
 	this->Hit_points = 100;
 	this->Max_hit_points = 100;
-	this->Energy_points = 100;
+	this->Energy_points = 50;
 	this->Max_energy_points = 100;
 	this->Level = 1;
-	this->Melee_attack_damage = 30;
-	this->Ranged_attack_damage = 20;
-	this->Armor_damage_reduction = 5;
+	this->Melee_attack_damage = 20;
+	this->Ranged_attack_damage = 15;
+	this->Armor_damage_reduction = 3;
 }
 
-FragTrap::FragTrap() : Name("default FragTrap")
+ScavTrap::ScavTrap() : Name("default ScavTrap")
 {
-	 std::cout << "default constructor called" << std::endl;
+	 std::cout << "* ScavTrap default constructor called *" << std::endl;
 	 init_vars();
 	 return;
 }
 
-FragTrap::FragTrap( std::string _Name ) : Name(_Name) 
+ScavTrap::ScavTrap( std::string _Name ) : Name(_Name) 
 {
-	std::cout << "parametric constructor called" << std::endl;
+	std::cout << "* ScavTrap parametric constructor called *" << std::endl;
 	 init_vars();
 	return;
 }
 
-FragTrap::FragTrap( FragTrap const & src )
+ScavTrap::ScavTrap( ScavTrap const & src )
 {
-	 std::cout << "copy constructor called" << std::endl;
+	 std::cout << "* ScavTrap copy constructor called *" << std::endl;
 	 *this = src;
 	 return;
 }
 
-FragTrap::~FragTrap()
+ScavTrap::~ScavTrap()
 {
-	std::cout << "destructor called" << std::endl;
+	std::cout << "* ScavTrap destructor called *" << std::endl;
 	return;
 }
 
-FragTrap & FragTrap::operator=( FragTrap const & rhs )
+ScavTrap & ScavTrap::operator=( ScavTrap const & rhs )
 {
 	std::cout << "assignation operator called" << std::endl;
 	this->Hit_points = rhs.Hit_points;
@@ -65,10 +65,10 @@ FragTrap & FragTrap::operator=( FragTrap const & rhs )
     return (*this);
 }
 
-void	FragTrap::rangedAttack(std::string const & target)
+void	ScavTrap::rangedAttack(std::string const & target)
 {
 	std::cout <<
-	"FR4G-TP " << 
+	"FR4G-TP * ScavTrap " << 
 	this->Name << 
 	" attaque " << 
 	target << 
@@ -78,10 +78,10 @@ void	FragTrap::rangedAttack(std::string const & target)
 	std::endl;
 }
 
-void	FragTrap::meleeAttack(std::string const & target)
+void	ScavTrap::meleeAttack(std::string const & target)
 {
 	std::cout <<
-	"FR4G-TP " << 
+	"FR4G-TP * ScavTrap " << 
 	this->Name << 
 	" attaque " << 
 	target << 
@@ -91,10 +91,10 @@ void	FragTrap::meleeAttack(std::string const & target)
 	std::endl;
 }
 
-void	FragTrap::takeDamage(unsigned int amount)
+void	ScavTrap::takeDamage(unsigned int amount)
 {
 	std::cout <<
-	"FR4G-TP " << 
+	"FR4G-TP * ScavTrap " << 
 	this->Name << 
 	" prend " << 
 	amount - this->Armor_damage_reduction <<
@@ -105,10 +105,10 @@ void	FragTrap::takeDamage(unsigned int amount)
 		this->Hit_points = 0;
 }
 
-void	FragTrap::beRepaired(unsigned int amount)
+void	ScavTrap::beRepaired(unsigned int amount)
 {
 	std::cout <<
-	"FR4G-TP " << 
+	"FR4G-TP * ScavTrap " << 
 	this->Name << 
 	" se voit réparer " <<
 	amount <<
@@ -124,19 +124,39 @@ void	FragTrap::beRepaired(unsigned int amount)
 		this->Energy_points = Max_energy_points;
 }
 
-void	FragTrap::vaulthunter_dot_exe(std::string const & target)
+void	ScavTrap::challengeNewcomer(std::string const & target)
 {
-	std::string tab[5] = {"poignardage de dos", "coup de pied dans ta tête", "gros doigt", "eye contact", "BLABLABLA JENTENDS RIEN"};
-	if (this->Energy_points - 25 < 0)
+	std::string index;
+
+	std::cout << "CHALLENGE INCOMING ON " << target << "\n" << std::endl;
+	std::cout << "CHOOSE YOUR CHALLENGE (1 or 2):" << std::endl;
+	std::cout << "1.Sing a song/2.Imit human\n" << std::endl;
+	std::cin >> index;
+	if (index != "1" && index != "2")
 	{
-		std::cout << "FR4G-TP " << this->Name << " a moins de 25 energy_points !" << std::endl;
+		std::cout << "WRONG INDEX ! DIIIIIED" << std::endl;
 		return;
 	}
-	this->Energy_points = this->Energy_points - 25;
-	std::cout << "FR4G-TP " << this->Name << " utilise \"" << tab[std::rand() % 5] << "\" sur " << target << std::endl;
+	if (index == "1")
+	{
+		std::cout << "* robot voice *" << std::endl;
+		std::cout << "IIIIII AAAAAAAAM A ROBOOOOOT" << std::endl;
+		std::cout << "AND IIIIII'M SOOOOOOOOOOO" << std::endl;
+		std::cout << "ALOOOOOOOOOOOOOOOOONE" << std::endl;
+		std::cout << "YEAH YEAH YEAH YEAH" << std::endl;
+		std::cout << "* mic drop *" << std::endl;
+	}
+	if (index == "2")
+	{
+		std::cout << "* bad human voice *" << std::endl;
+		std::cout << "I am a human gnagnagna" << std::endl;
+		std::cout << "And i'm asking myself question on existence gnagnagna" << std::endl;
+		std::cout << "Cogito ergo sum gnagna" << std::endl;
+		std::cout << "* mic drop *" << std::endl;
+	}
 }
 
-std::ostream & operator<<( std::ostream & o, FragTrap const & rhs )
+std::ostream & operator<<( std::ostream & o, ScavTrap const & rhs )
 {
 	o << "name :\t\t\t " << rhs.Name << std::endl;
 	o << "level :\t\t\t " << rhs.Level << std::endl;

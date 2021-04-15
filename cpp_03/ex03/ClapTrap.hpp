@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/13 14:21:09 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/15 10:11:28 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/15 10:42:36 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/15 11:20:42 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAG_TRAP
-# define FRAG_TRAP
+#ifndef CLAPTRAP_HPP	
+# define CLAPTRAP_HPP	
 
 #include <iostream>
 #include <cstdlib>
 
-class FragTrap
+class ClapTrap
 {
 private:
 
 public:
 
-	FragTrap( void );
-	FragTrap( std::string Name );
-	FragTrap( FragTrap const & src );
-	~FragTrap( void );
-	FragTrap & operator=( FragTrap const & rhs );
+	ClapTrap( void );
+	ClapTrap( std::string Name );
+	ClapTrap( ClapTrap const & src );
+	~ClapTrap( void );
+	ClapTrap & operator=( ClapTrap const & rhs );
 
-	void	rangedAttack(std::string const & target);
-	void	meleeAttack(std::string const & target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
-	void	vaulthunter_dot_exe(std::string const & target);
-	void	init_vars(void);
 
 	std::string		Name;
 	int 			Hit_points;
@@ -47,6 +43,6 @@ public:
 
 };
 
-std::ostream & operator<<( std::ostream & o, FragTrap const & rhs );
+std::ostream & operator<<( std::ostream & o, ClapTrap const & rhs );
 
 #endif

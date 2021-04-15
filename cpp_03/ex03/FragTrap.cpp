@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 14:23:15 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/15 09:41:46 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/15 11:26:51 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,30 +24,31 @@ void	FragTrap::init_vars(void)
 	this->Armor_damage_reduction = 5;
 }
 
-FragTrap::FragTrap() : Name("default FragTrap")
+FragTrap::FragTrap() : ClapTrap::ClapTrap()
 {
-	 std::cout << "default constructor called" << std::endl;
+	 std::cout << "* FragTrap default constructor called" << std::endl;
 	 init_vars();
 	 return;
 }
 
-FragTrap::FragTrap( std::string _Name ) : Name(_Name) 
+FragTrap::FragTrap( std::string _Name ) : ClapTrap::ClapTrap(_Name) 
 {
-	std::cout << "parametric constructor called" << std::endl;
+	std::cout << "* FragTrap parametric constructor called" << std::endl;
 	 init_vars();
 	return;
 }
 
 FragTrap::FragTrap( FragTrap const & src )
 {
-	 std::cout << "copy constructor called" << std::endl;
+	 std::cout << "* FragTrap copy constructor called" << std::endl;
 	 *this = src;
 	 return;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "destructor called" << std::endl;
+	std::cout << "* FragTrap destructor called" << std::endl;
+	// ClapTrap::~ClapTrap();
 	return;
 }
 
@@ -89,39 +90,6 @@ void	FragTrap::meleeAttack(std::string const & target)
 	this->Melee_attack_damage <<
 	" points de dégâts !" <<
 	std::endl;
-}
-
-void	FragTrap::takeDamage(unsigned int amount)
-{
-	std::cout <<
-	"FR4G-TP " << 
-	this->Name << 
-	" prend " << 
-	amount - this->Armor_damage_reduction <<
-	" de dommage !" <<
-	std::endl;
-	this->Hit_points = this->Hit_points - amount + this->Armor_damage_reduction;
-	if (this->Hit_points < 0)
-		this->Hit_points = 0;
-}
-
-void	FragTrap::beRepaired(unsigned int amount)
-{
-	std::cout <<
-	"FR4G-TP " << 
-	this->Name << 
-	" se voit réparer " <<
-	amount <<
-	" HP et " <<
-	amount <<
-	" point d'énergie !" << 
-	std::endl;
-	this->Hit_points = this->Hit_points + amount;
-	this->Energy_points = this->Energy_points + amount;
-	if (this->Hit_points > this->Max_hit_points)
-		this->Hit_points = Max_hit_points;
-	if (this->Energy_points > this->Max_energy_points)
-		this->Energy_points = Max_energy_points;
 }
 
 void	FragTrap::vaulthunter_dot_exe(std::string const & target)

@@ -1,57 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/13 14:23:15 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/15 09:41:46 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/15 10:51:43 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/15 11:22:31 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 
-void	FragTrap::init_vars(void)
+ClapTrap::ClapTrap() : Name("default")
 {
-	this->Hit_points = 100;
-	this->Max_hit_points = 100;
-	this->Energy_points = 100;
-	this->Max_energy_points = 100;
-	this->Level = 1;
-	this->Melee_attack_damage = 30;
-	this->Ranged_attack_damage = 20;
-	this->Armor_damage_reduction = 5;
-}
-
-FragTrap::FragTrap() : Name("default FragTrap")
-{
-	 std::cout << "default constructor called" << std::endl;
-	 init_vars();
+	 std::cout << "* ClapTrap default constructor called *" << std::endl;
 	 return;
 }
 
-FragTrap::FragTrap( std::string _Name ) : Name(_Name) 
+ClapTrap::ClapTrap( std::string _Name ) : Name(_Name)
 {
-	std::cout << "parametric constructor called" << std::endl;
-	 init_vars();
+	std::cout << "* ClapTrap parametric constructor called *" << std::endl;
 	return;
 }
 
-FragTrap::FragTrap( FragTrap const & src )
+ClapTrap::ClapTrap( ClapTrap const & src )
 {
-	 std::cout << "copy constructor called" << std::endl;
+	 std::cout << "* ClapTrap copy constructor called *" << std::endl;
 	 *this = src;
 	 return;
 }
 
-FragTrap::~FragTrap()
+ClapTrap::~ClapTrap()
 {
-	std::cout << "destructor called" << std::endl;
+	std::cout << "* ClapTrap destructor called *" << std::endl;
 	return;
 }
 
-FragTrap & FragTrap::operator=( FragTrap const & rhs )
+ClapTrap & ClapTrap::operator=( ClapTrap const & rhs )
 {
 	std::cout << "assignation operator called" << std::endl;
 	this->Hit_points = rhs.Hit_points;
@@ -65,36 +51,10 @@ FragTrap & FragTrap::operator=( FragTrap const & rhs )
     return (*this);
 }
 
-void	FragTrap::rangedAttack(std::string const & target)
+void	ClapTrap::takeDamage(unsigned int amount)
 {
 	std::cout <<
-	"FR4G-TP " << 
-	this->Name << 
-	" attaque " << 
-	target << 
-	" à distance, causant " <<
-	this->Ranged_attack_damage <<
-	" points de dégâts !" <<
-	std::endl;
-}
-
-void	FragTrap::meleeAttack(std::string const & target)
-{
-	std::cout <<
-	"FR4G-TP " << 
-	this->Name << 
-	" attaque " << 
-	target << 
-	" en mêlée, causant " <<
-	this->Melee_attack_damage <<
-	" points de dégâts !" <<
-	std::endl;
-}
-
-void	FragTrap::takeDamage(unsigned int amount)
-{
-	std::cout <<
-	"FR4G-TP " << 
+	"FR4G-TP * " << 
 	this->Name << 
 	" prend " << 
 	amount - this->Armor_damage_reduction <<
@@ -105,10 +65,10 @@ void	FragTrap::takeDamage(unsigned int amount)
 		this->Hit_points = 0;
 }
 
-void	FragTrap::beRepaired(unsigned int amount)
+void	ClapTrap::beRepaired(unsigned int amount)
 {
 	std::cout <<
-	"FR4G-TP " << 
+	"FR4G-TP * " << 
 	this->Name << 
 	" se voit réparer " <<
 	amount <<
@@ -124,19 +84,7 @@ void	FragTrap::beRepaired(unsigned int amount)
 		this->Energy_points = Max_energy_points;
 }
 
-void	FragTrap::vaulthunter_dot_exe(std::string const & target)
-{
-	std::string tab[5] = {"poignardage de dos", "coup de pied dans ta tête", "gros doigt", "eye contact", "BLABLABLA JENTENDS RIEN"};
-	if (this->Energy_points - 25 < 0)
-	{
-		std::cout << "FR4G-TP " << this->Name << " a moins de 25 energy_points !" << std::endl;
-		return;
-	}
-	this->Energy_points = this->Energy_points - 25;
-	std::cout << "FR4G-TP " << this->Name << " utilise \"" << tab[std::rand() % 5] << "\" sur " << target << std::endl;
-}
-
-std::ostream & operator<<( std::ostream & o, FragTrap const & rhs )
+std::ostream & operator<<( std::ostream & o, ClapTrap const & rhs )
 {
 	o << "name :\t\t\t " << rhs.Name << std::endl;
 	o << "level :\t\t\t " << rhs.Level << std::endl;
