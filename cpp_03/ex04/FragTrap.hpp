@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 14:21:09 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/15 11:20:30 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/15 13:53:44 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <cstdlib>
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 private:
 
@@ -33,6 +33,7 @@ public:
 	void	meleeAttack(std::string const & target);
 	void	vaulthunter_dot_exe(std::string const & target);
 	void	init_vars(void);
+	void	init_specs(void);
 };
 
 std::ostream & operator<<( std::ostream & o, FragTrap const & rhs );

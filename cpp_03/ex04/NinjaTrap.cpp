@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 11:36:09 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/15 12:11:12 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/15 14:03:22 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ void	NinjaTrap::init_vars(void)
 	this->Melee_attack_damage = 60;
 	this->Ranged_attack_damage = 5;
 	this->Armor_damage_reduction = 0;
+}
+
+void	NinjaTrap::init_specs(void)
+{
+	this->Energy_points = 120;
+	this->Max_energy_points = 120;
+	this->Level = 1;
+	this->Melee_attack_damage = 60;
 }
 
 NinjaTrap::NinjaTrap() : ClapTrap::ClapTrap()

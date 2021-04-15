@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 14:13:13 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/15 12:15:25 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/15 14:51:04 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int main()
 {
@@ -23,6 +24,7 @@ int main()
 	ClapTrap Clark("Clark");
 	NinjaTrap Nietsch("Nietsch");
 	NinjaTrap Narwal("Narwal");
+	SuperTrap SpiderMan("SpiderMan");
 
 	std::cout << std::endl;
     Sherman.rangedAttack(Tom.Name);
@@ -52,5 +54,15 @@ int main()
 	Nietsch.ninjaShoeBox(Narwal);
 	std::cout << std::endl;
 	// std::cout << Nietsch << std::endl;
+	std::cout << SpiderMan << std::endl;
+	SpiderMan.meleeAttack(Tom.Name);
+	SpiderMan.rangedAttack(Tom.Name);
+	SpiderMan.vaulthunter_dot_exe(Tom.Name);
+	SpiderMan.vaulthunter_dot_exe(Tom.Name);
+	SpiderMan.vaulthunter_dot_exe(Tom.Name);
+	SpiderMan.vaulthunter_dot_exe(Tom.Name);
+	SpiderMan.vaulthunter_dot_exe(Tom.Name);
+	SpiderMan.ninjaShoeBox(Tom);
+	std::cout << std::endl;
 	return (0);
 }

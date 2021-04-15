@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 14:23:15 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/15 11:26:51 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/15 14:43:01 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,30 +24,39 @@ void	FragTrap::init_vars(void)
 	this->Armor_damage_reduction = 5;
 }
 
+void	FragTrap::init_specs(void)
+{
+	this->Hit_points = 100;
+	this->Max_hit_points = 100;
+	this->Level = 1;
+	this->Ranged_attack_damage = 20;
+	this->Armor_damage_reduction = 5;
+}
+
 FragTrap::FragTrap() : ClapTrap::ClapTrap()
 {
-	 std::cout << "* FragTrap default constructor called" << std::endl;
+	 std::cout << "* FragTrap default constructor called *" << std::endl;
 	 init_vars();
 	 return;
 }
 
 FragTrap::FragTrap( std::string _Name ) : ClapTrap::ClapTrap(_Name) 
 {
-	std::cout << "* FragTrap parametric constructor called" << std::endl;
+	std::cout << "* FragTrap parametric constructor called *" << std::endl;
 	 init_vars();
 	return;
 }
 
 FragTrap::FragTrap( FragTrap const & src )
 {
-	 std::cout << "* FragTrap copy constructor called" << std::endl;
+	 std::cout << "* FragTrap copy constructor called *" << std::endl;
 	 *this = src;
 	 return;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "* FragTrap destructor called" << std::endl;
+	std::cout << "* FragTrap destructor called *" << std::endl;
 	// ClapTrap::~ClapTrap();
 	return;
 }

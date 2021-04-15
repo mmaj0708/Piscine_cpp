@@ -1,6 +1,6 @@
 NAME = a.out
 
-SRCS = FragTrap.cpp main.cpp ScavTrap.cpp ClapTrap.cpp NinjaTrap.cpp
+SRCS = FragTrap.cpp main.cpp ScavTrap.cpp ClapTrap.cpp NinjaTrap.cpp SuperTrap.cpp
 
 OBJECTS = $(SRCS:.cpp=.o)
 

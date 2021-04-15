@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
+/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/15 11:33:57 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/15 13:53:30 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/15 12:19:22 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/15 14:08:31 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJATRAP_HPP
-# define NINJATRAP_HPP
+#ifndef SUPERTRAP_HPP
+# define SUPERTRAP_HPP
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "NinjaTrap.hpp"
 
-class NinjaTrap : virtual public ClapTrap
+class SuperTrap : public NinjaTrap, public FragTrap
 {
 private:
 
 public:
 
-	NinjaTrap( void );
-	NinjaTrap( std::string Name );
-	NinjaTrap( NinjaTrap const & src );
-	~NinjaTrap( void );
+	SuperTrap( void );
+	SuperTrap( std::string Name );
+	SuperTrap( SuperTrap const & src );
+	~SuperTrap( void );
 
 	void	init_vars(void);
-	void	init_specs(void);
-	void	ninjaShoeBox(ClapTrap & target);
-	void	ninjaShoeBox(FragTrap & target);
-	void	ninjaShoeBox(NinjaTrap & target);
-	void	ninjaShoeBox(ScavTrap & target);
 
-	NinjaTrap & operator=( NinjaTrap const & rhs );
+	SuperTrap & operator=( SuperTrap const & rhs );
 };
 
-std::ostream & operator<<( std::ostream & o, NinjaTrap const & rhs );
+std::ostream & operator<<( std::ostream & o, SuperTrap const & rhs );
 
 #endif
