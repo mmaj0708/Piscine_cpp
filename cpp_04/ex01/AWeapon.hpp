@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   AWeapon.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 11:29:43 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/16 12:05:57 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/16 16:01:23 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/16 16:39:29 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
+#ifndef AWEAPON
+# define AWEAPON
 
 #include <iostream>
-#include "Sorcerer.hpp"
-#include "Victim.hpp"
 
-class Peon : public Victim
+class AWeapon
 {
-private:
 
+protected:
+
+	std::string name;
+	int			damage;
+	int			apcost;
 
 public:
 
-	Peon( void );
-	Peon( std::string name );
-	Peon( Peon const & src );
-	virtual ~Peon( void );
-	void getPolymorphed( void ) const;
-	Peon & operator=( Peon const & rhs );
-
-	std::string	name;
+	AWeapon( void );
+	AWeapon(std::string const & name, int apcost, int damage);
+	AWeapon( AWeapon const & src );
+	virtual ~AWeapon();
+	std::string		getName() const;
+	int getAPCost() const;
+	int getDamage() const;
+	virtual void attack() const = 0;
+	AWeapon & operator=( AWeapon const & rhs );
 };
 
 #endif

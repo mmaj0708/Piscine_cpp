@@ -1,48 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.cpp                                           :+:      :+:    :+:   */
+/*   Cheval.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 11:32:00 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/16 12:07:46 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/16 12:08:06 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/16 12:10:59 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Peon.hpp"
+#include "Cheval.hpp"
 #include "Victim.hpp"
 
-// Peon::Peon()
+// Cheval::Cheval()
 // {
 // 	 std::cout << "default constructor called" << std::endl;
 // 	 return;
 // }
 
-Peon::Peon( std::string name ) : Victim::Victim(name)
+Cheval::Cheval( std::string name ) : Victim::Victim(name)
 {
-	std::cout << "Zog zog." << std::endl;
+	std::cout << "huuuuh" << std::endl;
 }
 
-Peon::Peon( Peon const & src ) : Victim(src)
+Cheval::Cheval( Cheval const & src ) : Victim(src)
 {
 	this->name = src.name;
 	*this = src;
 	return;
 }
 
-Peon::~Peon()
+Cheval::~Cheval()
 {
-	std::cout << "Bleuark..." << std::endl;
+	std::cout << "Hihan..." << std::endl;
 	return;
 }
 
-void Peon::getPolymorphed( void ) const
+void Cheval::getPolymorphed( void ) const
 {
-	std::cout << this->name << " has been turned into a pink pony!" << std::endl;
+	std::cout << this->name << " has been turned into a human!" << std::endl;
 }
 
-Peon & Peon::operator=( Peon const & rhs )
+Cheval & Cheval::operator=( Cheval const & rhs )
 {
 	this->name = rhs.name;
 	return(*this);

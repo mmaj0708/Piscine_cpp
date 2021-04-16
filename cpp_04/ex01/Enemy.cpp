@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   Enemy.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 11:29:43 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/16 12:05:57 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/16 17:03:05 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/16 17:03:17 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
+#include "Enemy.hpp"
 
-#include <iostream>
-#include "Sorcerer.hpp"
-#include "Victim.hpp"
-
-class Peon : public Victim
+Enemy::Enemy()
 {
-private:
+	 std::cout << "default constructor called" << std::endl;
+	 return;
+}
 
+Enemy::Enemy( Enemy const & src )
+{
+	 std::cout << "copy constructor called" << std::endl;
+	 *this = src;
+	 return;
+}
 
-public:
+Enemy::~Enemy()
+{
+	std::cout << "destructor called" << std::endl;
+	return;
+}
 
-	Peon( void );
-	Peon( std::string name );
-	Peon( Peon const & src );
-	virtual ~Peon( void );
-	void getPolymorphed( void ) const;
-	Peon & operator=( Peon const & rhs );
+Enemy & Enemy::operator=( Enemy const & rhs );
+{
 
-	std::string	name;
-};
-
-#endif
+	return;
+}

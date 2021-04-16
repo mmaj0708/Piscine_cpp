@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   Enemy.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 11:29:43 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/16 12:05:57 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/16 16:59:39 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/16 18:16:57 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
+#ifndef ENEMY_HPP
+# define ENEMY_HPP
 
-#include <iostream>
-#include "Sorcerer.hpp"
-#include "Victim.hpp"
+#include "AWeapon.hpp"
 
-class Peon : public Victim
+class Enemy
 {
-private:
+protected:
 
+	int			hp;
+	std::string type;
 
 public:
 
-	Peon( void );
-	Peon( std::string name );
-	Peon( Peon const & src );
-	virtual ~Peon( void );
-	void getPolymorphed( void ) const;
-	Peon & operator=( Peon const & rhs );
-
-	std::string	name;
+	Enemy(int hp, std::string const & type);
+	virtual ~Enemy();
+	std::string [...] getType() const;
+	int getHP() const;
+	virtual void takeDamage(int);
 };
 
 #endif
+
+c
