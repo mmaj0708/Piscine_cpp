@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:30:47 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/16 16:49:38 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/19 11:48:04 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 PowerFist::PowerFist()
 {
-	 std::cout << "PowerFist default constructor called" << std::endl;
+	//  std::cout << "PowerFist default constructor called" << std::endl;
 	 this->name = "Power Fist";
 	 this->damage = 50;
 	 this->apcost = 8;
@@ -25,20 +25,20 @@ PowerFist::PowerFist()
 PowerFist::PowerFist( std::string const & name, int apcost, int damage )
 : AWeapon::AWeapon(name, damage, apcost)
 {
-	std::cout << "PowerFist parametric constructor called" << std::endl;
+	// std::cout << "PowerFist parametric constructor called" << std::endl;
 	return;
 }
 
 PowerFist::PowerFist( PowerFist const & src )
 {
-	 std::cout << "PowerFist copy constructor called" << std::endl;
+	//  std::cout << "PowerFist copy constructor called" << std::endl;
 	 *this = src;
 	 return;
 }
 
 PowerFist::~PowerFist()
 {
-	std::cout << "PowerFist destructor called" << std::endl;
+	// std::cout << "PowerFist destructor called" << std::endl;
 	return;
 }
 

@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:27:01 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/16 16:49:41 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/19 11:55:36 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "AWeapon.hpp"
 
-class PowerFist : AWeapon
+class PowerFist : virtual public AWeapon
 {
 
 public:

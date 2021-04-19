@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:53:14 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/16 16:55:44 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/19 11:47:48 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 PlasmaRifle::PlasmaRifle()
 {
-	 std::cout << "PlasmaRifle default constructor called" << std::endl;
+	//  std::cout << "PlasmaRifle default constructor called" << std::endl;
 	 this->name = "Plasma Rifle";
 	 this->damage = 21;
 	 this->apcost = 5;
@@ -25,20 +25,20 @@ PlasmaRifle::PlasmaRifle()
 PlasmaRifle::PlasmaRifle( std::string const & name, int apcost, int damage )
 : AWeapon::AWeapon(name, damage, apcost)
 {
-	std::cout << "PlasmaRifle parametric constructor called" << std::endl;
+	// std::cout << "PlasmaRifle parametric constructor called" << std::endl;
 	return;
 }
 
 PlasmaRifle::PlasmaRifle( PlasmaRifle const & src )
 {
-	 std::cout << "PlasmaRifle copy constructor called" << std::endl;
+	//  std::cout << "PlasmaRifle copy constructor called" << std::endl;
 	 *this = src;
 	 return;
 }
 
 PlasmaRifle::~PlasmaRifle()
 {
-	std::cout << "PlasmaRifle destructor called" << std::endl;
+	// std::cout << "PlasmaRifle destructor called" << std::endl;
 	return;
 }
 

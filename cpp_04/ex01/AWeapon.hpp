@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:01:23 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/16 16:39:29 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/19 11:41:55 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class AWeapon
 protected:
 
 	std::string name;
-	int			damage;
 	int			apcost;
+	int			damage;
 
 public:
 

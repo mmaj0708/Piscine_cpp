@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   Spider.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 16:59:39 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/19 11:24:22 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/19 12:20:23 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/19 12:32:37 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-# define ENEMY_HPP
+#ifndef SPIDER_HPP
+# define SPIDER_HPP
 
-#include "AWeapon.hpp"
+#include "Enemy.hpp"
 
-class Enemy
+class Enemy;
+
+class Spider : virtual public Enemy
 {
-protected:
+private:
 
-	int			hp;
-	std::string type;
 
 public:
 
-	Enemy();
-	Enemy(int hp, std::string const & type);
-	Enemy( Enemy const & src );
-	virtual ~Enemy();
-	std::string getType() const;
-	int getHP() const;
-	virtual void takeDamage(int amount);
-	Enemy & operator=( Enemy const & rhs );
+	Spider( void );
+	Spider( Spider const & src );
+	~Spider( void );
+	Spider & operator=( Spider const & rhs );
+
 };
 
 #endif

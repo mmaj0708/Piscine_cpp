@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
+/*   banana.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 16:52:07 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/19 11:55:30 by mmaj             ###   ########.fr       */
+/*   Created: 2021/04/19 12:01:20 by mmaj              #+#    #+#             */
+/*   Updated: 2021/04/19 12:05:50 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLASMARIFLE_HPP
-# define PLASMARIFLE_HPP
+#ifndef BANANA_HPP
+# define BANANA_HPP
 
 #include "AWeapon.hpp"
 
-class PlasmaRifle : virtual public AWeapon
+class Banana : virtual public AWeapon
 {
 
 public:
 
-	PlasmaRifle( void );
-	PlasmaRifle( std::string const & name, int apcost, int damage );
-	PlasmaRifle( PlasmaRifle const & src );
-	virtual ~PlasmaRifle( void );
+	Banana( void );
+	Banana( std::string const & name, int apcost, int damage );
+	Banana( Banana const & src );
+	virtual ~Banana( void );
 	virtual void attack() const;
-	PlasmaRifle & operator=( PlasmaRifle const & rhs );
+	Banana & operator=( Banana const & rhs );
 
 };
 
