@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 14:43:04 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/19 14:45:39 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/20 09:24:07 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define TACTICALMARINE_HPP
 
 #include "ISpaceMarine.hpp"
+#include <iostream>
 
 class TacticalMarine : public ISpaceMarine
 {

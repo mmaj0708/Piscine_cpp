@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 14:09:32 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/19 16:07:53 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/20 10:54:11 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 
 	Squad( void );
 	Squad( Squad const & src );
-	virtual ~Squad() {}
+	virtual ~Squad();
 	Squad & operator=( Squad const & rhs );
 
 	virtual int getCount() const;
