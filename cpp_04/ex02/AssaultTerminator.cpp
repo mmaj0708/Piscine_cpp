@@ -20,7 +20,6 @@ AssaultTerminator::AssaultTerminator()
 
 AssaultTerminator::AssaultTerminator( AssaultTerminator const & src )
 {
-	//  std::cout << "Tactical Marine ready for battle!" << std::endl;
 	 *this = src;
 	 return;
 }

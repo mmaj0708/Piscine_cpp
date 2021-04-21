@@ -22,7 +22,6 @@ Squad::Squad()
 
 Squad::Squad( Squad const & src )
 {
-	//  the copy must be deep
 	 *this = src;
 	 return;
 }
@@ -30,9 +29,7 @@ Squad::Squad( Squad const & src )
 Squad::~Squad()
 {
 	for (int i = 0 ; i < count ; i++)
-	{
 		delete marines[i];
-	}
 	delete [] marines;
 	return;
 }
@@ -71,18 +68,16 @@ int Squad::push(ISpaceMarine* marine)
 		this->count++;
 		return(this->count);
 	}
-
 	if (is_already_there(marine) == 1)
+	{
 		return (count);
-
+	}
 	tmp = new ISpaceMarine*[count + 1];
 	for (int i = 0 ; i < this->count ; i++)
-	{
 		tmp[i] = marines[i];
-		tmp[count] = marine;
-		delete [] marines;
-		marines = tmp;
-	}
+	tmp[count] = marine;
+	delete [] marines;
+	marines = tmp;
 	this->count++;
 	return (count);
 }
@@ -92,12 +87,12 @@ Squad & Squad::operator=( Squad const & rhs )
 	if (this->marines)
 	{
 		for (int i = 0 ; i < this->count ; i++)
-			delete this->marines[i];
+			delete this->marines[i]; // ecraser units de la squad actuelle
 		delete [] marines;
 	}
 	count = 0;
 	marines = NULL;
 	for (int j = 0 ; j < rhs.getCount() ; j++)
-		this->push(rhs.getUnit(j)->clone());
+		this->push(rhs.getUnit(j)->clone()); // envoyer clone de l'unit ds squad
 	return(*this);
 }
