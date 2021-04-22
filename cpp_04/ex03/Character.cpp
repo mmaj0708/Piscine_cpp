@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 09:06:09 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/22 12:11:02 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/22 16:51:07 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,28 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-	int i = 0;
+	// int i = 0;
 
-	if (_count > 4 || !m)
-		return;
-	while (_tab[i])
-		i++;
-	_tab[i] = m;
-	_count++;
+	// // std::cout << m->getXP() << std::endl;
+	// if (_count > 4 || !m)
+	// 	return;
+	// while (_tab[i])
+	// 	i++;
+	// // AMateria *tmp =  m->clone();
+	// _tab[i] = m;
+	// _count++;
+
+	if (_count == 4 || !m)
+		return ;
+	for (int i = 0; i < 4; i++)
+	{
+		if (!_tab[_count])
+		{
+			_tab[_count] = m;
+			_count++;
+			break ;
+		}
+	}
 }
 
 void Character::unequip(int idx)

@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 11:24:33 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/22 12:32:46 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/22 16:30:13 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,11 @@ AMateria	*MateriaSource::getMateria(int const i) const
 
 void MateriaSource::learnMateria(AMateria* src)
 {
-	if (_sourceCount > 3 || !src)
-		return;
-	_sourceTab[_sourceCount] = src;
-	// std::cout << "check src " << src->getType() << std::endl;
-	// std::cout << "check " << _sourceTab[_sourceCount]->getType() << std::endl;
-	_sourceCount++;
+	if (_sourceCount < 4 && src)
+	{
+		_sourceTab[_sourceCount] = src;
+		_sourceCount++;
+	}
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)

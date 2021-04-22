@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 12:04:04 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/22 12:10:50 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/22 15:44:23 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ std::string const & AMateria::getType() const //Returns the materia type
 
 unsigned int AMateria::getXP() const //Returns the Materia's XP
 {
-    return (this->_xp);
+  	return (this->_xp);
 }
 
 void	AMateria::setType(std::string const &type)
