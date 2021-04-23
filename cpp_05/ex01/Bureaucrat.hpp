@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 10:13:54 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/23 12:35:58 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/23 16:52:25 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
 
 class Bureaucrat
 {
@@ -34,6 +35,7 @@ public:
 	int		     getGrade() const;
 	void		 incremente();
 	void		 decremente();
+	void		 signForm(Bureaucrat const & bur);
 
 	class GradeTooHighException : public std::exception
 	{

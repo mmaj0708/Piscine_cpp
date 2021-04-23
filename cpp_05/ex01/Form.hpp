@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 14:25:24 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/23 15:05:35 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/23 16:48:41 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,17 @@ public:
 	int			getExecGrade() const;
 
 	void		beSigned(Bureaucrat const & bur);
-	void		signForm(Bureaucrat const & bur);
 
 	class	GradeTooHighException : public std::exception
 	{
 		public:
-		
+		virtual const char* what() const throw();
 	};
 
 	class	GradeTooLowException : public std::exception
 	{
 		public:
-		
+		virtual const char* what() const throw();
 	};
 
 	Form & operator=( Form const & rhs );
