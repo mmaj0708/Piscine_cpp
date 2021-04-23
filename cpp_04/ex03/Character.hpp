@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 09:01:44 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/22 10:59:06 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/23 09:29:47 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ public:
 	virtual ~Character( void );
 	Character & operator=( Character const & rhs );
 
-	virtual std::string const & getName() const;
-	virtual AMateria *getMateria(int const i) const;
-	virtual int getCount() const;
-	virtual std::string const getMaterias() const;
+	std::string const & getName() const;
+	AMateria *getMateria(int const i) const;
+	int getCount() const;
+	std::string const getMaterias() const;
 
 
 	virtual void equip(AMateria* m);

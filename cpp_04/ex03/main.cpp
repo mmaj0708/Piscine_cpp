@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 12:01:55 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/23 09:24:17 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/23 09:38:05 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,14 @@ int main()
 	
 	AMateria* tmp;
 	AMateria* tmp2;
-	AMateria* tmp3;
+	AMateria* tmp3; // fake
+	AMateria* tmp4;
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	tmp2 = src->createMateria("ice");
 	me->equip(tmp2);
-
+	tmp4 = src->createMateria("cure");
+	me->equip(tmp4);
 	//fake type
 	tmp3 = src->createMateria("gnee");
 	me->equip(tmp3);
@@ -59,8 +61,14 @@ int main()
 	me->use(1, *bob);
 	std::cout << "ICE XP = " << tmp2->getXP() << std::endl;
 	
-	//nothing on gne
+	std::cout << std::endl;
 	me->use(2, *bob);
+	std::cout << "CURE2 XP = " << tmp4->getXP() << std::endl;
+	me->use(2, *bob);
+	std::cout << "CURE2 XP = " << tmp4->getXP() << std::endl;
+
+	//nothing on gne
+	me->use(3, *bob);
 
 
 	me->unequip(1);

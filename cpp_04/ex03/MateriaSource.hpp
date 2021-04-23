@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 11:21:23 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/22 12:01:30 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/23 09:31:22 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	MateriaSource( void );
 	MateriaSource( int const n );
 	MateriaSource( MateriaSource const & src );
-	~MateriaSource( void );
+	virtual ~MateriaSource( void );
 	MateriaSource & operator=( MateriaSource const & rhs );
 
 	AMateria	*getMateria(int const i) const;
