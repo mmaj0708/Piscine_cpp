@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 12:01:55 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/22 16:51:30 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/23 09:24:17 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,8 @@ int main()
 	me->unequip(1);
 	me->use(1, *bob);
 
-	std::cout << std::endl;
-	std::cout << "enter last equip" << std::endl;
-	me->equip(tmp);
-	me->use(1, *bob);
-
 	delete src;
-	// delete me;
+	delete me;
 	delete bob;
 	return 0;
 }
