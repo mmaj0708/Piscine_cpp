@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 14:25:24 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/26 11:13:54 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:36:48 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ public:
 	Form( void );
 	Form( std::string name, int sGrade, int eGrade );
 	Form( Form const & src );
-	~Form( void );
+	virtual ~Form( void );
 
 	std::string getName() const;
 	bool		getBool() const;

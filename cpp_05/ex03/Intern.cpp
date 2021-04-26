@@ -6,15 +6,20 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 12:04:39 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/26 12:39:24 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:33:46 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 
 Intern::Intern()
+//: _tabFormName[] = {"robotomy request", "presidential request", "shrubbery request"};
+//= {&Intern::makeShrubberyCreationForm, &Intern::makeRobotomyRequestForm, &Intern::makePresidentialPardonForm};
 {
-	 return;
+	_tabFormName[0] = "robotomy request";
+	_tabFormName[1] = "presidential request";
+	_tabFormName[2] = "shrubbery request";
+	return;
 }
 
 Intern::Intern( Intern const & src )
@@ -28,28 +33,33 @@ Intern::~Intern()
 	return;
 }
 
-Form	*Intern::makeShrubberyCreationForm(std::string target)
+Form	*makeShrubberyCreationForm(std::string target)
 {
 	return (new ShrubberyCreationForm(target));
 }
 
-Form	*Intern::makeRobotomyRequestForm(std::string target)
+Form	*makeRobotomyRequestForm(std::string target)
 {
 	return (new RobotomyRequestForm(target));
 }
 
-Form	*Intern::makePresidentialPardonForm(std::string target)
+Form	*makePresidentialPardonForm(std::string target)
 {
 	return (new PresidentialPardonForm(target));
 }
 
 Form* Intern::makeForm (std::string formName, std::string targetForm)
 {
+	Form		*(*_tabFunct[3])(std::string);
+	_tabFunct[0] = &makeRobotomyRequestForm;
+	_tabFunct[1] = &makePresidentialPardonForm;
+	_tabFunct[2] = &makeShrubberyCreationForm;
 	for (int i = 0 ; i < 3 ; i++)
 	{
 		if (_tabFormName[i] == formName)
 		{
-			return (new Form );
+			std::cout << "Intern creates " << formName << std::endl;
+			return (_tabFunct[i](targetForm));
 		}
 	}
 	std::cerr << \

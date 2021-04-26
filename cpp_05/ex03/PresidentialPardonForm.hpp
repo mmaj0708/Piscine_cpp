@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 11:51:16 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/26 11:55:04 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:37:49 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 
 	PresidentialPardonForm( std::string target );
 	PresidentialPardonForm( PresidentialPardonForm const & src );
-	~PresidentialPardonForm( void );
+	virtual ~PresidentialPardonForm( void );
 	PresidentialPardonForm & operator=( PresidentialPardonForm const & rhs );
 
 	std::string 	getTarget() const;

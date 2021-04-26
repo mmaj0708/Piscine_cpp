@@ -7,7 +7,7 @@ OBJECTS = $(SRCS:.cpp=.o)
 
 CXX = clang++
 
-CXXFLAGS += -Wall -Wextra -std=c++98
+CXXFLAGS += -g3 -Wall -Wextra -std=c++98
 
 all : $(NAME)
 

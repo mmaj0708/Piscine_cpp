@@ -6,15 +6,15 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 12:13:00 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/26 12:00:54 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:39:45 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
@@ -122,4 +122,18 @@ int main()
 	{
 		std::cerr << e.what() << '\n';
 	}
+
+	// intern
+	// 	_tabFormName[0] = "robotomy request";
+	// _tabFormName[1] = "presidential request";
+	// _tabFormName[2] = "shrubbery request";
+	std::cout << std::endl;
+	Intern someRandomIntern;
+	Form* rrf;
+	Form* rrf2;
+	rrf = someRandomIntern.makeForm("presidential request", "Bender");
+	rrf2 = someRandomIntern.makeForm("rorgawrgw", "Bender");
+
+	delete rrf;
+	delete rrf2;
 }

@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 10:39:22 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/26 11:12:08 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:38:44 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 
 	ShrubberyCreationForm( std::string target );
 	ShrubberyCreationForm( ShrubberyCreationForm const & src );
-	~ShrubberyCreationForm( void );
+	virtual ~ShrubberyCreationForm( void );
 	ShrubberyCreationForm & operator=( ShrubberyCreationForm const & rhs );
 
 	std::string 	getTarget() const;
