@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 14:45:43 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/26 09:53:38 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/26 11:13:28 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,31 @@ int			Form::getExecGrade() const
 	return(_execGrade);
 }
 
+void	Form::root_signing(bool sign_state)
+{
+	_bool = sign_state;
+}
+
 void		Form::beSigned(Bureaucrat const & bur)
 {
 	if (bur.getGrade() <=  _signGrade)
 		_bool = true;
 	else
 		throw Form::GradeTooLowException();		
+}
+
+void	Form::execute(Bureaucrat const &executor) const
+{
+	if (this->getExecGrade() < executor.getGrade())
+		throw Form::GradeTooLowException();
+	else if (getBool() == false)
+		throw Form::NotSigned();
+	return ;
+}
+
+const char	*Form::NotSigned::what(void) const throw()
+{
+	return ("form not signed.");
 }
 
 const char* Form::GradeTooHighException::what() const throw()

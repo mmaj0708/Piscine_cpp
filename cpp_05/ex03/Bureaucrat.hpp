@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 10:13:54 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/26 09:52:41 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/26 11:18:17 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ public:
 	void		 incremente();
 	void		 decremente();
 	void		 signForm(Form & form);
+	void		 executeForm(Form const & form);
 
 	class GradeTooHighException : public std::exception
 	{

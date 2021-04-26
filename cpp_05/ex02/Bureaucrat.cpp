@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 11:17:55 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/26 09:52:23 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/26 11:21:09 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,21 @@ void		 Bureaucrat::decremente()
 		throw (Bureaucrat::GradeTooHighException());
 	_grade++;
 }
+
+void		 Bureaucrat::executeForm(Form const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << _name << " executs " << form.getName() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << _name << " could not execute form : " << e.what() << std::endl;
+	}
+	return ;
+}
+
 
 void		Bureaucrat::signForm(Form & form)
 {

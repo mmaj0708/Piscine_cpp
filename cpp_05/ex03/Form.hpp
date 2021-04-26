@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 14:25:24 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/26 09:50:55 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/26 11:13:54 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <exception>
 #include "Bureaucrat.hpp"
+#include <fstream>
 
 class Bureaucrat;
 
@@ -39,9 +40,10 @@ public:
 	bool		getBool() const;
 	int			getSignedGrade() const;
 	int			getExecGrade() const;
+	void		root_signing(bool sign_state);
 
 	void		beSigned(Bureaucrat const & bur);
-
+	virtual void	execute(Bureaucrat const &executor) const;
 	class	GradeTooHighException : public std::exception
 	{
 		public:
@@ -49,6 +51,12 @@ public:
 	};
 
 	class	GradeTooLowException : public std::exception
+	{
+		public:
+		virtual const char* what() const throw();
+	};
+
+	class	NotSigned : public std::exception
 	{
 		public:
 		virtual const char* what() const throw();
