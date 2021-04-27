@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 11:18:02 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/16 12:05:50 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/27 16:19:08 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	Victim( std::string name );
 	Victim( Victim const & src );
 	virtual ~Victim( void );
-	void getPolymorphed( void ) const;
+	virtual void getPolymorphed( void ) const;
 	Victim & operator=( Victim const & rhs );
 
 	std::string	name;
