@@ -26,7 +26,7 @@ public:
 
 	Spider( void );
 	Spider( Spider const & src );
-	~Spider( void );
+	virtual ~Spider( void );
 	Spider & operator=( Spider const & rhs );
 
 };

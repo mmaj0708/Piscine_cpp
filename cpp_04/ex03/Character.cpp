@@ -53,17 +53,6 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-	// int i = 0;
-
-	// // std::cout << m->getXP() << std::endl;
-	// if (_count > 4 || !m)
-	// 	return;
-	// while (_tab[i])
-	// 	i++;
-	// // AMateria *tmp =  m->clone();
-	// _tab[i] = m;
-	// _count++;
-
 	if (_count == 4 || !m)
 		return ;
 	for (int i = 0; i < 4; i++)

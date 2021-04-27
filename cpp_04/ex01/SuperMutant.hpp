@@ -26,7 +26,7 @@ public:
 
 	SuperMutant( void );
 	SuperMutant( SuperMutant const & src );
-	~SuperMutant( void );
+	virtual ~SuperMutant( void );
 	virtual void takeDamage(int amount);
 	SuperMutant & operator=( SuperMutant const & rhs );
 
