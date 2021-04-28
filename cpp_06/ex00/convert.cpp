@@ -46,7 +46,7 @@ void		print_float(double const &value, int floatexception)
 		value2 = -value;
 	if ((value2 >= FLT_MIN && value2 <= FLT_MAX) || floatexception || value2 == 0)
 	{
-		if (value < 1000000)
+		if (value < 1000000 && value > -1000000)
 			std::cout << "float  : " << std::fixed << std::setprecision(1) << static_cast<float>(value) << 'f' << std::endl;
 		else
 			std::cout << "float  : " << std::scientific << static_cast<float>(value) << "f" << std::endl;
@@ -57,7 +57,7 @@ void		print_float(double const &value, int floatexception)
 
 void		print_double(double const &value)
 {
-	if (value < 1000000)
+	if (value < 1000000 && value > -1000000)
 		std::cout << "double : " << std::fixed << std::setprecision(1) << value << std::endl;
 	else
 		std::cout << "double : " << std::scientific << value << std::endl;
@@ -67,7 +67,6 @@ void		convert(std::string str, int floatexception, int charexception)
 {
 	double value;
 
-// std::cout << static_cast<float>(1000000) << std::endl;
 	if (charexception && is_char(str[0]))
 		value = static_cast<double>(str[0]);
 	else
