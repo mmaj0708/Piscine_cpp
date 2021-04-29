@@ -31,7 +31,6 @@ public:
 	virtual void getPolymorphed( void ) const;
 	Cheval & operator=( Cheval const & rhs );
 
-	std::string	name;
 };
 
 #endif

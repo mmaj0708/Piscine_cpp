@@ -31,7 +31,6 @@ public:
 	virtual void getPolymorphed( void ) const;
 	Peon & operator=( Peon const & rhs );
 
-	std::string	name;
 };
 
 #endif
