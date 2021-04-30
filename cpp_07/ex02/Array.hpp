@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 10:15:04 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/30 12:24:39 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/04/30 14:48:56 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ public:
 	~Array( void );
 	Array & operator=( Array const & rhs );
 	T	& operator[]( unsigned int const & i );
+	const T	& operator[]( unsigned int const & i ) const;
 
 	unsigned int	size() const;
 
@@ -73,6 +74,16 @@ Array<T> & Array<T>::operator=( Array const & rhs )
 // []
 template <typename T>
 T	& Array<T>::operator[]( unsigned int const & i )
+{
+	if (i >= size())
+		throw std::exception();
+
+	return (_arr[i]);	
+}
+
+// const [] car les construct par copie sont const
+template <typename T>
+const T	& Array<T>::operator[]( unsigned int const & i ) const
 {
 	if (i >= size())
 		throw std::exception();
