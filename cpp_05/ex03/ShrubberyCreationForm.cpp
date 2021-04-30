@@ -43,7 +43,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 
 	Form::execute(executor);
 	filename = _target + "_shrubbery";
-	shrubbery.open(filename, std::ios::out | std::ios::trunc);
+	shrubbery.open(filename.c_str(), std::ios::out | std::ios::trunc);
 	if (shrubbery.is_open())
 	{
 		shrubbery << TREE1 << std::endl;
