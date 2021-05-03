@@ -42,7 +42,7 @@ int main()
     }
 
     // with LIST
-    std::deque<int> tab3;
+    std::list<int> tab3;
 
     tab3.push_back(8);
     tab3.push_back(1);
