@@ -39,6 +39,11 @@ void * serialize(void)
 	int		n = rand();
 	int		*n_ptr = &n;
 
+
+	std::cout << "random string s1 = " << s1 << std::endl;
+	std::cout << "random number  n = " << n << std::endl;
+	std::cout << "random string s2 = " << s2 << std::endl;
+
 	memcpy(serialStr, reinterpret_cast<void *>(s1), 8);	
 	memcpy(&serialStr[8], reinterpret_cast<void *>(n_ptr), 4);	
 	memcpy(&serialStr[12], reinterpret_cast<void *>(s2), 8);	
@@ -69,7 +74,7 @@ int main ()
 	Data *d3 = deserialize(serialize());
 	Data *d4 = deserialize(serialize());
 
-	std::cout << "|---- D1 ----|" << std::endl;
+	std::cout << "\n|---- D1 ----|" << std::endl;
 	std::cout << "s1 = " << d1->s1 << std::endl;
 	std::cout << "n = " << d1->n << std::endl;
 	std::cout << "s2 = " << d1->s2 << std::endl;
