@@ -1,6 +1,6 @@
 NAME = a.out
 
-SRCS = main.cpp
+SRCS = main.cpp Mutantstack.cpp
 
 OBJECTS = $(SRCS:.cpp=.o)
 
