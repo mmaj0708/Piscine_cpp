@@ -29,6 +29,19 @@ class span
         int  shortestSpan(void);
         int  longestSpan(void);
 
+		// 	std::deque<int> content;
+		// void			addNumber(int newNumber);
+		// int				shortestSpan(void) const;
+		// int				longestSpan(void) const;
+		// unsigned int	max_size(void) const;
+
+		// template<typename InputIterator>
+		// void			add(InputIterator start, InputIterator end) {
+		// 	if ((end - start) + this->content.size() > this->_n)
+		// 		throw std::logic_error(span::ExcepSpanFull);
+		// 	this->content.insert(this->content.end(), start, end);
+		// }
+
     class spaceFullException : public std::exception
 	{
 		public :

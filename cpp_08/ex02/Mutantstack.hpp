@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 14:53:26 by mmaj              #+#    #+#             */
-/*   Updated: 2021/06/15 10:43:43 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/06/15 15:45:46 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
 
 	typedef typename std::stack<T>::container_type::iterator iterator; // container_type est en gros un typedef de deque
 	iterator begin( void ) { return (this->c.begin()); } // 'c' est une instance type deque possédant des iterateurs
-	iterator end( void ) { return (this->c.end()); } // a mettre dans le d
+	iterator end( void ) { return (this->c.end()); }
 
 	Mutantstack & operator=( Mutantstack const & rhs );
 };
