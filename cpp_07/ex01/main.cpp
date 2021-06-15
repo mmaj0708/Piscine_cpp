@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 14:56:33 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/30 10:12:06 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/06/15 12:38:12 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,17 @@ void print( T const & x ) { std::cout << x << std::endl; return; }
 
 int main() {
 
-int tab[] = { 0, 1, 2, 3, 4 }; // <--- J'ai jamais compris pourquoi on peut pas ecrire int[] tab. Ca aurait plus de sens vous trouvez pas ?
+int tab[] = { 0, 1, 2, 3, 4 };
 Awesome tab2[5];
 
 iter( tab, 5, print );
 iter( tab2, 5, print );
+
+//////
+std::string str_tab[3] = { "bonjour", "robert", "chaise"};
+float f_tab[3] = { 1.3, 3.54, 4.7893};
+iter( str_tab, 3, print );
+iter( f_tab, 3, print );
 
 return 0;
 }

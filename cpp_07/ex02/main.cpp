@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 13:38:09 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/30 14:48:37 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/06/15 12:46:21 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ int main( void ) {
 	Array <int>arr_cpy;
 	Array <int>arr_cpy2(arr); // construct par cpy
 
-	arr_cpy = arr;
+	arr_cpy = arr; // verif de l'assignation
 	std::cout << arr_cpy[0] << ", " << arr_cpy[1] << ", " << arr_cpy[2] << ", " << arr_cpy[3] << ", " << arr_cpy[4] << std::endl;
 	std::cout << arr_cpy2[0] << ", " << arr_cpy2[1] << ", " << arr_cpy2[2] << ", " << arr_cpy2[3] << ", " << arr_cpy2[4] << std::endl;
 
-	Array <std::string>str_arr(5);
+	Array <std::string>str_arr(5); // verif des strings
 
 	str_arr[0] = "gne0";
 	str_arr[1] = "gne1";
@@ -61,7 +61,7 @@ int main( void ) {
 	str_arr[4] = "gne4";
 	try
 	{
-		str_arr[5] = 42;
+		str_arr[5] = 42; // bad type
 	}
 	catch (std::exception &e)
 	{
@@ -69,7 +69,7 @@ int main( void ) {
 	}
 	std::cout << str_arr[0] << ", " << str_arr[1] << ", " << str_arr[2] << ", " << str_arr[3] << ", " << str_arr[4] << std::endl;
 
-	Array <std::string>str_arr_cpy;
+	Array <std::string>str_arr_cpy; 		// verif copy et assignation
 	Array <std::string>str_arr_cpy2(str_arr);
 
 	str_arr_cpy = str_arr;

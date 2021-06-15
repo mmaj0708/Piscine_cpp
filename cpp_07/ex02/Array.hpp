@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 10:15:04 by mmaj              #+#    #+#             */
-/*   Updated: 2021/04/30 14:48:56 by mmaj             ###   ########.fr       */
+/*   Updated: 2021/06/15 12:47:17 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ private:
 public:
 
 	Array( void ); // array vide
-	Array( unsigned int n ); // init un array de taille n avec init a 0 ? ou mets tout a n ?
+	Array( unsigned int n );
 	Array( Array const & src );
 	~Array( void );
 	Array & operator=( Array const & rhs );
