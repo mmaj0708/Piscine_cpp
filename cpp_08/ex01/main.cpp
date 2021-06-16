@@ -55,13 +55,25 @@ int		main()
 	}
 	std::cout << "------" << std::endl;
 
-	span sp5 = span(40000);
-
-	for (int i = 0; i < 20000; i++)
+	span bigspan(10010);
+	std::deque<int> tmp;
+	// for (int i = 0; i < 5000; i++)
+	// {
+	// 	tmp.push_back(i - 7000);
+	// 	tmp.push_front(100 + i);
+	// }
+	for (int i = 0; i < 10000; i++)
+		tmp.push_back(i);
+	bigspan.add(tmp.begin(), tmp.end());
+	std::cout << bigspan.shortestSpan() << std::endl;
+	std::cout << bigspan.longestSpan() << std::endl;
+	try
 	{
-		sp5.addNumber(i);
+		bigspan.add(tmp.begin(), tmp.begin() + 11);
 	}
-	std::cout << sp5.shortestSpan() << std::endl;
-	std::cout << sp5.longestSpan() << std::endl;
+	catch (std::exception &e)
+	{
+		std::cout << "Exception RAISED ! " << e.what() << std::endl;
+	}
 	return (0);
 }
